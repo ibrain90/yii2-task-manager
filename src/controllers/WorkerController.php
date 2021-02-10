@@ -103,7 +103,7 @@ class WorkerController extends Controller
             $taskModel->status = TaskStatus::FAIL;
             Yii::error($ex, self::$messageCategory);
         } finally {
-            if (!$taskModel !== null) {
+            if ($taskModel !== null) {
                 $taskModel->end_at = time();
                 $taskModel->save();
                 // создает повторную задачу

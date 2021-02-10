@@ -85,7 +85,7 @@ Worker
 ```
 'controllerMap' => [
     'worker' => [
-        'class' => 'ibrain90\taskManager\controllers\WorkerController',
+        'class' => 'brain90\taskManager\controllers\WorkerController',
     ],
     ...
 ],
