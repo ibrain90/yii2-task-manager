@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist makxxxs/yii2-task-manager "*"
+php composer.phar require --prefer-dist ibrain90/yii2-task-manager "*"
 ```
 
 or add
 
 ```
-"makxxxs/yii2-task-manager": "*"
+"ibrain90/yii2-task-manager": "*"
 ```
 
 to the require section of your `composer.json` file.
@@ -24,7 +24,7 @@ to the require section of your `composer.json` file.
 
 Migration:
 ```
-php yii migrate --migrationPath=@vendor/makxxxs/yii2-task-manager/src/migrations
+php yii migrate --migrationPath=@vendor/ibrain90/yii2-task-manager/src/migrations
 ```
 
 Tasks (example):
@@ -34,7 +34,7 @@ Tasks (example):
 
 namespace common\services\task\tasks;
 
-use makxxxs\taskManager\BaseTask;
+use ibrain90\taskManager\BaseTask;
 
 class Test extends BaseTask
 {
@@ -85,7 +85,7 @@ Worker
 ```
 'controllerMap' => [
     'worker' => [
-        'class' => 'makxxxs\taskManager\controllers\WorkerController',
+        'class' => 'ibrain90\taskManager\controllers\WorkerController',
     ],
     ...
 ],
