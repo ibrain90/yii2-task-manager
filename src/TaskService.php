@@ -48,7 +48,7 @@ class TaskService
      * @param integer $taskType TaskType value.
      * @param array|null $params
      * @param $taskParams
-     * @return bool
+     * @return Task|null
      */
     public static function addTask($taskType, $params = null, $taskParams = [])
     {
@@ -83,16 +83,16 @@ class TaskService
         }
         if (!$taskModel->save()) {
             Yii::error($taskModel->errors, self::$messageCategory);
-            return false;
+            return null;
         }
-        return true;
+        return $taskModel;
     }
 
     /**
      * Генерирует guid в качестве chainId.
      * @return string
      */
-    private static function generateChainId()
+    public static function generateChainId()
     {
         if (function_exists('com_create_guid') === true) {
             return trim(com_create_guid(), '{}');
