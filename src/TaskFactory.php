@@ -28,8 +28,8 @@ class TaskFactory
             throw new Exception('Task class does not exists.');
         }
 
-        if (!is_subclass_of($className, '\makxxxs\taskManager\BaseTask')) {
-            throw new Exception('Task class does not subclass of \makxxxs\taskManager\BaseTask.');
+        if (!is_subclass_of($className, BaseTask::class)) {
+            throw new Exception('Task class does not subclass of ' . BaseTask::class);
         }
 
         $params = Json::decode($taskModel->params);
